@@ -1,0 +1,578 @@
+.background-page {
+    .backg-section {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+    
+    // .background-page__img
+    &__img {
+      width: auto;
+      height: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      display: none;
+      @media (max-width:768px){
+         display: block; 
+      }
+    }
+
+		// .background-page__line
+		&__line {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      @media (max-width:768px){
+          display: none;
+      }
+    }
+
+		// .background-page__start-next
+		&__start-next {
+      opacity: 0;
+      transition: opacity .5s linear 0s;
+      &.taste-first-bg {
+        @media (min-width: 769px) {
+          background: radial-gradient(42.47% 85.84% at 50% 50%, #52ACEA 0%, #3C69C1 69.79%), radial-gradient(42.47% 85.84% at 50% 50%, #00D0DE 0%, #008891 69.79%), radial-gradient(42.47% 85.84% at 50% 50%, #944E1B 0%, #552503 100%);      
+        }
+      }
+     
+      .fp-section-0 & {
+        opacity: 1;
+      }
+      .fp-section-1 & {
+        opacity: 1;
+      }
+		}
+		// .background-page__second
+		&__second {
+      opacity: 0;
+      transition: opacity .5s linear 0s;
+        @media (min-width: 769px) {
+          background: radial-gradient(42.47% 85.84% at 50% 50%, #FFFADE 0%, #F9E8B9 60.42%, #FFD25F 100%), radial-gradient(42.47% 85.84% at 50% 50%, #FFF3EA 0%, #F7E0CF 100%), radial-gradient(42.47% 85.84% at 50% 50%, #00D0DE 0%, #008891 69.79%), radial-gradient(42.47% 85.84% at 50% 50%, #00EFE1 0%, #008891 100%), radial-gradient(42.47% 85.84% at 50% 50%, #944E1B 0%, #552503 100%);
+        }
+      .fp-section-2 & {
+        opacity: 1;
+      }
+		}
+		// .background-page__third
+		&__third {
+      opacity: 0;
+      transition: opacity .5s linear 0s;
+        @media (min-width: 769px) {
+          background: radial-gradient(60.12% 121.5% at 51.64% 42.61%, #FFF3EA 0%, #FFA439 67.71%), radial-gradient(42.47% 85.84% at 50% 50%, #00D0DE 0%, #008891 69.79%), radial-gradient(42.47% 85.84% at 50% 50%, #00EFE1 0%, #008891 100%), radial-gradient(42.47% 85.84% at 50% 50%, #944E1B 0%, #552503 100%);
+        }
+      .fp-section-3 & {
+        opacity: 1;
+      }
+		}
+		// .background-page__fourth
+		&__fourth {
+      opacity: 0;
+      transition: opacity .5s linear 0s;
+        @media (min-width: 769px) {
+          background: radial-gradient(42.47% 85.84% at 50% 50%, #047069 0%, #00393D 100%), radial-gradient(42.47% 85.84% at 50% 50%, #944E1B 0%, #552503 100%);
+        }
+      .fp-section-4 & {
+        opacity: 1;
+      }
+		}
+
+}
+
+
+// REFRESH TEXT and BUTTON =====================================
+.common {
+  &__refresh {
+    position: fixed;
+    z-index: 15;
+    left: 50%;
+    transform: translateX(-50%);
+    .fp-section-0 & {
+      bottom: 5%; 
+    }
+    // -------------------------
+    .fp-section-1 & {
+      animation: refresh-move-up 3.5s cubic-bezier(0.55, 0.085, 0, 0.99) 0s forwards normal;      
+    }
+    .fp-section-1.fp-up & {
+     color: white;
+     transition: color 0s linear 1s;
+    }
+    // -------------------------
+    .fp-section-2.fp-down & {
+     color: $mainColor;
+     transition: color 0s linear 1s;
+    }
+    .fp-section-2.fp-up & {
+     color: $mainColor;
+    }  
+    .fp-section-2 & {
+      animation: refresh-move-up-1 2.7s cubic-bezier(0.55, 0.085, 0, 0.99) 0s forwards normal;
+      @media (max-width:$mobile){
+        animation: refresh-move-up-mob 2s cubic-bezier(0.55, 0.085, 0, 0.99) 0s forwards normal;
+      }
+      @media (max-width:$mobileSmall){
+        animation: refresh-move-up-sm-2 2s cubic-bezier(0.55, 0.085, 0, 0.99) 0s forwards normal;
+      }
+    }
+    // -------------------------
+    .fp-section-3 & {
+      color: $mainColor;
+     }
+    .fp-section-3 & {
+      animation: refresh-move-up-2 2.5s cubic-bezier(0.55, 0.085, 0, 0.99) 0s forwards normal;
+      @media (max-width:$mobile){
+        animation: refresh-move-up-mob-2 2.5s cubic-bezier(0.55, 0.085, 0, 0.99) 0s forwards normal;
+      }
+      @media (max-width:$mobileSmall){
+        animation: refresh-move-up-sm-3  2.5s cubic-bezier(0.55, 0.085, 0, 0.99) 0s forwards normal;
+        pointer-events: none;
+      }
+    }
+    // -------------------------
+    .fp-section-4 & {
+      opacity: 0;
+      pointer-events: none;
+    }
+    @keyframes refresh-move-up {
+      0%{ bottom: 5%}
+      20%{bottom: -50%;}
+      80%{bottom: -50%;}
+      100%{bottom: 5%;}
+    }
+    @keyframes refresh-move-up-sm-2 {
+      0%{ bottom: 5%}
+      20%{bottom: -50%;}
+      80%{bottom: -50%;}
+      100%{bottom: 5%;}
+    }
+    @keyframes refresh-move-up-sm-3 {
+      0%{ bottom: 5%}
+      20%{bottom: -50%;}
+      100%{bottom: -50%; opacity: 0;}
+    }
+    @keyframes refresh-move-up-1 {
+      0%{ bottom: 5%; }
+      20%{bottom: -50%;}
+      80%{bottom: -50%;}
+      100%{bottom: 5%;}
+    }
+    @keyframes refresh-move-up-3 {
+      0%{opacity: 0; bottom: 5%}
+      20%{bottom: -50%; }
+      80%{bottom: -50%; opacity: 1;}
+      100%{bottom: 5%;}
+    }
+    @keyframes refresh-move-up-2 {
+      0%{ bottom: 5%;}
+      20%{bottom: -50%;}
+      80%{bottom: -50%; left: 63%;}
+      100%{bottom: 5%; left: 63%;}
+    }
+    @keyframes refresh-move-up-mob-2 {
+      0%{ top: 5%}
+      20%{top: -50%; opacity: 0;}
+      20%{top: -50%; opacity: 0;}
+      21%{top: -50%; opacity: 1;}
+      80%{top: -50%;}
+      100%{top: 5%;}
+    }
+    @keyframes refresh-move-up-mob {
+      0%{ bottom: 5%}
+      20%{bottom: -50%; opacity: 0;}
+      20%{top: -50%; opacity: 0;}
+      21%{top: -50%; opacity: 1;}
+      80%{top: -50%;}
+      100%{top: 5%;}
+    }
+  }
+}
+
+.refresh {
+  font-weight: 400;
+  font-size: rem(18);
+  line-height: .9;
+  color: white;
+  text-align: center;
+  width: 100%;
+  max-width: inherit;
+  @media (max-width:768px){
+     padding: 0 rem(20);
+  }
+  @media (max-width:$mobileSmall){
+     font-size: rem(16); 
+  }
+  // .refresh__btn
+  &__btn {
+    text-decoration: underline;
+  }
+}
+// ================================================================
+
+// .mouse ----------------------------
+.mouse {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 15;
+  pointer-events: none;
+  bottom: 11%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media (max-width:$mobileSmall){
+     bottom: 17%; 
+  }
+  span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: rem(130);
+    height: rem(130);
+    border-radius: 50%;
+    border: 15px solid rgba(255, 255, 255, 0.1);
+
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(7.5px);
+
+    animation: mouse-circles 2s ease-out 0.5s forwards infinite;
+
+    @media (max-width:520px){
+      width: rem(86);
+      height: rem(86);
+    }
+
+    &::before,
+    &::after {
+      content:'';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: rem(130);
+      height: rem(130);
+      border-radius: 50%;
+      border: 15px solid rgba(255, 255, 255, 0.1);
+      @media (max-width:520px){
+        width: rem(86);
+        height: rem(86);
+      }
+    }
+    &::before {
+      animation: mouse-circles-2 2s ease-out 0s forwards infinite;
+    }
+    &::after {
+      animation: mouse-circles-3 2s ease-out 1s forwards infinite;
+    }
+  }
+  .fp-section-1 & {
+    animation: mouse-move 3.5s ease-in-out 0s 1 forwards normal;
+    @media (max-width:$mobileSmall){
+      animation: mouse-move-sm 3.5s ease-in-out 0s 1 forwards normal;
+    }
+  }
+  .fp-section-2 & {
+    animation: mouse-move-2 2.5s ease-in-out 0s 1 forwards normal;
+    @media (max-width:$mobile){
+      animation: mouse-move-mob-2 2.5s ease-in-out 0s 1 forwards normal; 
+    }
+    @media (max-width:$mobileSmall){
+      animation: mouse-move-sm-2 2.5s ease-in-out 0s 1 forwards normal;
+    }
+  }
+  .fp-section-3 & {
+    animation: mouse-move-3 3.5s ease-in-out 0s 1 forwards normal;
+    @media (max-width:$mobile){
+      animation: mouse-move-mob-3 2.6s ease-in-out 0s 1 forwards normal;
+    }
+    @media (max-width:$mobileSmall){
+      animation: mouse-move-sm-3 3s ease-in-out 0s 1 forwards normal;
+    }
+  }
+  .fp-section-3.fp-up & {
+    animation: mouse-move-4 3.5s ease-in-out 0s 1 forwards normal; 
+    @media (max-width:$mobile){
+      animation: mouse-move-mob-4 3.5s ease-in-out 0s 1 forwards normal;
+    }
+    @media (max-width:$mobileSmall){
+      animation: mouse-move-sm-4 3s ease-in-out 0s 1 forwards normal;
+    }
+  }
+  .fp-section-4 & {
+    opacity: 0;
+  }
+
+  @keyframes mouse-move {
+    0% {bottom: 8%;}
+    // 30% {bottom: -100%}
+    50% {bottom: -100%;}
+    100% {bottom: 15%;}
+  }
+  @keyframes  mouse-move-sm {
+    0% {bottom: 17%;}
+    // 30% {bottom: -100%}
+    50% {bottom: -100%;}
+    100% {bottom: 17%;}
+  }
+  @keyframes  mouse-move-sm-2 {
+    0% {bottom: 17%;}
+    // 30% {bottom: -100%}
+    50% {bottom: -100%;}
+    100% {bottom: 17%;}
+  }
+  @keyframes mouse-move-2 {
+    0% {bottom: 15%;}
+    69% {bottom: -100%}
+    70% {bottom: -100%;}
+    100% {bottom: 15%;}
+  }
+  @keyframes mouse-move-mob-2 {
+    0% {bottom: 15%;}
+    69% {bottom: -100%}
+    70% {bottom: -100%;}
+    100% {bottom: 8%;}
+  }
+  @keyframes mouse-move-3 {
+    0% {bottom: 15%;}
+    30% {bottom: -100%}
+    70% {bottom: -100%; left: 63%; bottom: 22%;}
+    100% {bottom: 15%; left: 63%; bottom: 22%;}
+  }
+  @keyframes mouse-move-mob-3 {
+    0% {bottom: 8%;}
+    30% {bottom: -100%}
+    70% {bottom: -100%; left: 80%;}
+    100% {bottom: 50%; left: 80%;}
+  }
+  @keyframes mouse-move-sm-3 {
+    0% {bottom: 8%;}
+    30% {bottom: -100%}
+    70% {bottom: -100%; left: 80%;}
+    100% {bottom: 8%; left: 80%;}
+  }
+  @keyframes mouse-move-4 {
+    0% {bottom: 15%; opacity: 0;}
+    30% {bottom: -100%; opacity: 0;}
+    70% {bottom: -100%; left: 63%; bottom: 22%; opacity: 1;}
+    100% {bottom: 15%; left: 63%; bottom: 22%;}
+  }
+  @keyframes mouse-move-mob-4 {
+    0% {bottom: 15%; opacity: 0;}
+    30% {bottom: -100%; opacity: 0;}
+    70% {bottom: -100%; left: 80%; bottom: 45%; opacity: 1;}
+    100% {bottom: 15%; left: 80%; bottom: 45%;}
+  }
+  @keyframes mouse-move-sm-4 {
+    0% {bottom: -100%; opacity: 0;}
+    70% {bottom: -100%; left: 80%;opacity: 1;}
+    100% {bottom: 8%; left: 80%; }
+  }
+  // .mouse__icon
+  &__icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: rem(130);
+    height: rem(130);
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(7.5px);
+    border-radius: 50%;
+    z-index: 1;
+    @media (max-width:520px){
+      width: rem(86);
+      height: rem(86);
+    }
+  }
+  // .mouse__icon-mouse
+  &__icon-mouse {
+    display: block;
+    .touch & {
+      display: none;
+    }
+  }
+  // .mouse__icon-touch
+  &__icon-touch {
+    display: none;
+    .touch & {
+      display: block;
+      width: rem(60);
+      height: auto;
+      @media (max-width:520px){
+        width: rem(40);
+      }
+    }
+  }
+}
+// .mouse__text ------------------------------------
+.mouse {
+  &__text {
+    position: fixed;
+    left: 50%;
+    bottom: 12%;
+    transform: translateX(-50%);
+
+    font-weight: 700;
+    font-size: rem(20);
+    line-height: .9;
+    text-align: center;
+    color: #FFFFFF;
+    
+    text-align: center;
+    z-index: 15;
+    pointer-events: none;
+    width: 100%;
+    @media (max-width:520px){
+      font-size: rem(12);
+    }
+    @media (max-width:$mobileSmall){
+       bottom: 18%; 
+    }
+    .fp-section-1 & {
+     animation: mouse-text-opacity 3.5s ease-in-out 0s 1 forwards normal;
+     @media (max-width:$mobileSmall){
+      animation: mouse-text-opacity-sm 3.5s ease-in-out 0s 1 forwards normal;
+     }
+    }
+    .fp-section-1.fp-up & {
+      color: white;
+      transition: color 0s linear 1s;
+     }
+     .fp-section-2.fp-down & {
+      color: $mainColor;
+      transition: color 0s linear 1s;
+     }
+     .fp-section-2.fp-up & {
+      color: $mainColor;
+     }
+     .fp-section-3 & {
+      color: $mainColor;
+     }
+    .fp-section-2 & {
+      animation: mouse-text-opacity-1 3s ease-in-out 0s 1 forwards normal;
+      @media (max-width:$mobile){
+        animation: mouse-text-opacity-mob-1 2.5s ease-in-out 0s 1 forwards normal; 
+      }
+      @media (max-width:$mobileSmall){
+        animation: mouse-text-opacity-sm-1 2.5s ease-in-out 0s 1 forwards normal;
+      }
+
+    }
+    .fp-section-3 & {
+      animation: mouse-text-opacity-2 2.8s ease-in 0s 1 forwards normal;
+      @media (max-width:$mobile){
+        animation: mouse-text-opacity-mob-2 2.8s ease-in 0s 1 forwards normal;
+      }
+      @media (max-width:$mobileSmall){
+        animation: mouse-text-opacity-sm-2 3s ease-in 0s 1 forwards normal;
+      }
+     }
+    .fp-section-4 & {
+      opacity: 0;
+    }
+    @keyframes mouse-text-opacity {
+      0%{opacity: 1;}
+      10%{opacity: 0;}
+      80%{opacity: 0;}
+      100%{opacity: 1; bottom: 15%;}
+    }
+    @keyframes mouse-text-opacity-1 {
+      0%{opacity: 1; bottom: 15%;}
+      10%{opacity: 0;}
+      80%{opacity: 0;}
+      100%{opacity: 1; bottom: 15%;}
+    }
+    @keyframes mouse-text-opacity-mob-1 {
+      0%{opacity: 1; bottom: 15%;}
+      10%{opacity: 0;}
+      80%{opacity: 0;}
+      100%{opacity: 1; bottom: 8%;}
+    }
+    @keyframes mouse-text-opacity-sm {
+      0%{opacity: 1;}
+      10%{opacity: 0;}
+      80%{opacity: 0;}
+      100%{opacity: 1; bottom: 18%;}
+    }
+    @keyframes mouse-text-opacity-2 {
+      0%{opacity: 0; left: 50%;}
+      90%{opacity: 0; bottom: 23%; left: 63%;}
+      100%{opacity: 1; bottom: 23%; left: 63%;}
+    }
+    @keyframes mouse-text-opacity-mob-2 {
+      0%{opacity: 0; left: 50%;}
+      90%{opacity: 0; left: 80%;}
+      100%{opacity: 1; left: 80%; bottom: 50%;}
+    }
+    @keyframes mouse-text-opacity-sm-2 {
+      0%{opacity: 0; left: 50%;}
+      90%{opacity: 0; left: 80%;}
+      100%{opacity: 1; left: 80%; bottom: 9%;}
+    }
+    @keyframes mouse-text-opacity-sm-1 {
+      0%{opacity: 0; }
+      90%{opacity: 0;}
+      100%{opacity: 1; bottom: 18%;}
+    }
+  }
+  // .mouse__text-mouse
+  &__text-mouse {
+    display: block;
+    .touch & {
+      display: none;
+    }
+  }
+  // .mouse__text-touch
+  &__text-touch {
+    display: none;
+    .touch & {
+      display: block;
+    }
+  }
+}
+
+@keyframes mouse-circles {
+  0% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+  }
+
+  100% {
+      transform: translate(-50%, -50%) scale(1.7);
+      opacity: 0;
+  }
+}
+@keyframes mouse-circles-2 {
+  0% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+  }
+
+  100% {
+      transform: translate(-50%, -50%) scale(1.7);
+      opacity: 0;
+  }
+}
+@keyframes mouse-circles-3 {
+  0% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+  }
+
+  100% {
+      transform: translate(-50%, -50%) scale(1.7);
+      opacity: 0;
+  }
+}
