@@ -45,6 +45,12 @@
           background: radial-gradient(42.47% 85.84% at 50% 50%, #52ACEA 0%, #3C69C1 69.79%), radial-gradient(42.47% 85.84% at 50% 50%, #00D0DE 0%, #008891 69.79%), radial-gradient(42.47% 85.84% at 50% 50%, #944E1B 0%, #552503 100%);      
         }
       }
+      // для второго вкуса (подмен стилей)
+      &.taste-second-bg {
+        @media (min-width: 769px) {
+          background: radial-gradient(42.47% 85.84% at 50% 50%, #D0FFDA 0%, #2D8C72 100%), radial-gradient(42.47% 85.84% at 50% 50%, #B3FFC4 0%, #144336 100%), radial-gradient(42.47% 85.84% at 50% 50%, #5AB7F8 0%, #40A7EE 69.79%), radial-gradient(42.47% 85.84% at 50% 50%, #00D0DE 0%, #008891 69.79%), radial-gradient(42.47% 85.84% at 50% 50%, #944E1B 0%, #552503 100%);     
+        }
+      }
      
       .fp-section-0 & {
         opacity: 1;

@@ -722,7 +722,7 @@ export class FullPage {
 			});
 								
 								// -------------------
-			mm.add('(min-width: 551px) and (max-height: 1059px)', () => {
+			mm.add('(min-width: 769px) and (min-height: 836px) and (max-height: 1059px)', () => {
 				tlPackages.fromTo('.second-slide__packages', {
 					y: '100vh',
 				}, {
@@ -734,8 +734,21 @@ export class FullPage {
 					]
 				}, "<-=2");
 			});
+						// -- для экранов в пределах 768рх высотвы
+			mm.add('(min-width: 769px) and (max-height: 835px)', () => {
+				tlPackages.fromTo('.second-slide__packages', {
+					y: '100vh',
+				}, {
+					keyframes: [
+						{y: "100vh"},
+						{y: "50vh",},
+						{y: "22vh", delay: 0.2},
+						{y: "-29vh",},
+					]
+				}, "<-=2");
+			});
 					// для экранов высотой выше чем 1060рх --------------
-			mm.add('(min-width: 551px) and (min-height: 1060px) and (max-height: 1399px)', () => {
+			mm.add('(min-width: 769px) and (min-height: 1060px) and (max-height: 1399px)', () => {
 				tlPackages.fromTo('.second-slide__packages', {
 					y: '100vh',
 				}, {
@@ -747,7 +760,7 @@ export class FullPage {
 					]
 				}, "<-=2");
 			});
-			mm.add('(min-width: 551px) and (min-height: 1400px)', () => {
+			mm.add('(min-width: 769px) and (min-height: 1400px)', () => {
 				tlPackages.fromTo('.second-slide__packages', {
 					y: '100vh',
 				}, {
@@ -760,7 +773,7 @@ export class FullPage {
 				}, "<-=2");
 			});
 					// ------------------------------------------------------------
-			mm.add('(min-width: 481px) and (max-width: 550px)', () => {
+			mm.add('(min-width: 481px) and (max-width: 768px)', () => {
 				tlPackages.fromTo('.second-slide__packages', {
 					y: '100vh',
 				}, {
