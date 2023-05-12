@@ -329,6 +329,9 @@
 }
 //==========================================================================
 .third {
+  &.active-section {
+    z-index: 3 !important;
+  }
   .third-slide {
     position: absolute;
     top: 0;

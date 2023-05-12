@@ -2101,6 +2101,10 @@ body::after {
           transform: translate(-50%, -50%) scale(2.7);
 }
 
+.third.active-section {
+  z-index: 3 !important;
+}
+
 .third .third-slide {
   position: absolute;
   top: 0;
